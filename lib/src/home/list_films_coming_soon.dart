@@ -3,22 +3,26 @@ import 'package:flutter/material.dart';
 class ViewFilmsComingSoon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return PokemonListView();
+    return FilmsComingSoonListView();
   }
 }
 
-class PokemonListView extends StatefulWidget {
+class FilmsComingSoonListView extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return PokemonListViewState();
+    return FilmsComingSoonViewState();
   }
 }
 
-class PokemonListViewState extends State<PokemonListView> {
+class FilmsComingSoonViewState extends State<FilmsComingSoonListView> {
   final items = [
-    'Avengers: endgame',
+    'Black Widow',
+    'The Eternals',
+    'Shang-Chi',
     'Bloodshot',
-    'Avengers: endgame',
+    'Thor: Love and Thunder',
+    'Bloodshot',
+    'Doctor Strange',
     'Bloodshot',
     'Avengers: endgame'
   ];

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutterapp/src/home/list_films.dart';
 import 'package:flutterapp/src/home/list_films_coming_soon.dart';
+import 'package:flutterapp/src/home/list_films_special.dart';
 
 class Movie extends StatefulWidget {
   @override
@@ -150,6 +151,7 @@ class _MovieState extends State<Movie> {
                     "Tất Cả",
                     style: TextStyle(
                         fontSize: 16.0,
+                        decoration: TextDecoration.underline,
                         color: Colors.cyan,
                         fontStyle: FontStyle.normal),
                   ),
@@ -181,6 +183,7 @@ class _MovieState extends State<Movie> {
                     style: TextStyle(
                         fontSize: 16.0,
                         color: Colors.cyan,
+                        decoration: TextDecoration.underline,
                         fontStyle: FontStyle.normal),
                   ),
                 ),
@@ -189,6 +192,24 @@ class _MovieState extends State<Movie> {
             Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 10.0),
               child: SizedBox(height: 200.0, child: ViewFilmsComingSoon()),
+            ),
+            Container(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(16.0, 24.0, 0, 4.0),
+                child: Text(
+                  "Phim đặc biệt (4D/IMAX/STARIUM)",
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.normal),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 0, 0, 10.0),
+              child: SizedBox(height: 200.0, child: ViewFilmsSpecialList()),
             ),
           ],
         ),
