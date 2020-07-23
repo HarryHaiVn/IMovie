@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ViewFilmsList extends StatelessWidget {
+class ViewFilmsComingSoon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PokemonListView();
@@ -20,10 +20,6 @@ class PokemonListViewState extends State<PokemonListView> {
     'Bloodshot',
     'Avengers: endgame',
     'Bloodshot',
-    'Avengers: endgame',
-    'Bloodshot',
-    'Avengers: endgame',
-    'Bloodshot',
     'Avengers: endgame'
   ];
 
@@ -32,7 +28,7 @@ class PokemonListViewState extends State<PokemonListView> {
     return ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,
-        itemExtent: 300.0,
+        itemExtent: 200.0,
         itemBuilder: (context, position) {
           return Padding(
             padding: const EdgeInsets.fromLTRB(10.0, 0, 0, 0),
@@ -73,7 +69,7 @@ class PokemonListViewState extends State<PokemonListView> {
                         overflow: TextOverflow.ellipsis,
                       ),
                       trailing: Icon(
-                        Icons.bookmark,
+                        Icons.book,
                         color: Colors.green,
                       ),
                     ),

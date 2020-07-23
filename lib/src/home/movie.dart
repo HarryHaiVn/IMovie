@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutterapp/src/home/list_films.dart';
+import 'package:flutterapp/src/home/list_films_coming_soon.dart';
 
 class Movie extends StatefulWidget {
   @override
@@ -20,7 +22,7 @@ class _MovieState extends State<Movie> {
                 Image.asset(
                   'ic_films.png',
                   width: double.infinity,
-                  height: 400,
+                  height: 400.0,
                   fit: BoxFit.fill,
                 ),
                 Column(
@@ -28,18 +30,18 @@ class _MovieState extends State<Movie> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
+                      padding: EdgeInsets.fromLTRB(16.0, 0, 0, 0),
                       child: Text(
                         "AVENGERS: ENDGAME",
                         style: TextStyle(
-                            fontSize: 24,
+                            fontSize: 24.0,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontStyle: FontStyle.normal),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(16, 0, 0, 4),
+                      padding: EdgeInsets.fromLTRB(16.0, 0, 0, 4.0),
                       child: Text(
                         "SUẤT CHIẾU SỚM",
                         style: TextStyle(
@@ -58,7 +60,7 @@ class _MovieState extends State<Movie> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.fromLTRB(16, 4, 0, 4),
+                  padding: EdgeInsets.fromLTRB(16.0, 4.0, 0, 4.0),
                   child: Text(
                     "Hành Động",
                     style: TextStyle(
@@ -72,15 +74,15 @@ class _MovieState extends State<Movie> {
                   child: Text(" ",
                       style: TextStyle(
                         backgroundColor: Colors.white,
-                        fontSize: 10,
+                        fontSize: 10.0,
                       )),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
+                  padding: EdgeInsets.all(4.0),
                   child: Text(
                     "2D",
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 14.0,
                         color: Colors.white,
                         fontStyle: FontStyle.normal),
                   ),
@@ -94,7 +96,7 @@ class _MovieState extends State<Movie> {
                       )),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
+                  padding: EdgeInsets.all(4.0),
                   child: Text(
                     "20h20p",
                     style: TextStyle(
@@ -105,22 +107,22 @@ class _MovieState extends State<Movie> {
                 ),
                 Spacer(),
                 Container(
-                  margin: EdgeInsets.fromLTRB(30, 10, 17, 0),
-                  padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
+                  margin: EdgeInsets.fromLTRB(30.0, 10.0, 16.0, 0),
+                  padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
                   decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.all(
-                          Radius.circular(24)), // set rounded corner radius
+                          Radius.circular(24.0)), // set rounded corner radius
                       boxShadow: [
                         BoxShadow(
-                            blurRadius: 10,
+                            blurRadius: 10.0,
                             color: Colors.black,
                             offset: Offset(1, 3))
                       ] // make rounded corner of border
                       ),
-                  child: Text("Mua Vé",
+                  child: Text("Đặt Vé",
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 14.0,
                           color: Colors.white,
                           fontStyle: FontStyle.normal)),
                 ),
@@ -131,11 +133,11 @@ class _MovieState extends State<Movie> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.fromLTRB(16, 24, 0, 4),
+                  padding: EdgeInsets.fromLTRB(16.0, 24.0, 0, 4.0),
                   child: Text(
                     "Phim đang chiếu",
                     style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 16.0,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.normal),
@@ -143,47 +145,29 @@ class _MovieState extends State<Movie> {
                 ),
                 Spacer(),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(16, 24, 17, 4),
+                  padding: EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 4.0),
                   child: Text(
                     "Tất Cả",
                     style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 16.0,
                         color: Colors.cyan,
                         fontStyle: FontStyle.normal),
                   ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 200.0,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (context, position) {
-                  return Card(
-                    margin: EdgeInsets.fromLTRB(16, 0, 0, 0),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(
-                        position.toString(),
-                        style: TextStyle(fontSize: 22.0),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
+            SizedBox(height: 200.0, child: ViewFilmsList()),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.fromLTRB(16, 24, 0, 4),
+                  padding: EdgeInsets.fromLTRB(16.0, 24.0, 0, 4.0),
                   child: Text(
                     "Phim sắp chiếu",
                     style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 16.0,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.normal),
@@ -191,34 +175,21 @@ class _MovieState extends State<Movie> {
                 ),
                 Spacer(),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(16, 24, 17, 4),
+                  padding: EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 4.0),
                   child: Text(
                     "Tất Cả",
                     style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 16.0,
                         color: Colors.cyan,
                         fontStyle: FontStyle.normal),
                   ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 200.0,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, position) {
-                  return Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(
-                        position.toString(),
-                        style: TextStyle(fontSize: 22.0),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            )
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 0, 0, 10.0),
+              child: SizedBox(height: 200.0, child: ViewFilmsComingSoon()),
+            ),
           ],
         ),
       ),
