@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/src/home/chat.dart';
+import 'package:flutterapp/src/home/foods.dart';
 import 'package:flutterapp/src/home/movie.dart';
 import 'package:flutterapp/src/home/profile.dart';
 import 'package:flutterapp/src/home/settings.dart';
@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
   int currentTab = 0; // to keep track of active tab index
   final List<Widget> screens = [
     Movie(),
-    Chat(),
+    Foods(),
     Profile(),
     Settings(),
   ]; // to store nested tabs
@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
                     onPressed: () {
                       setState(() {
                         currentScreen =
-                            Chat(); // if user taps on this dashboard tab will be active
+                            Foods(); // if user taps on this dashboard tab will be active
                         currentTab = 1;
                       });
                     },
@@ -83,11 +83,11 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          Icons.chat,
+                          Icons.fastfood,
                           color: currentTab == 1 ? Colors.blue : Colors.grey,
                         ),
                         Text(
-                          'Chats',
+                          'Foods',
                           style: TextStyle(
                             color: currentTab == 1 ? Colors.blue : Colors.grey,
                           ),
@@ -97,9 +97,7 @@ class _HomeState extends State<Home> {
                   )
                 ],
               ),
-
               // Right Tab bar icons
-
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -155,7 +153,6 @@ class _HomeState extends State<Home> {
                   )
                 ],
               )
-
             ],
           ),
         ),

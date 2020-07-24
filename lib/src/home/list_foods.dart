@@ -1,41 +1,40 @@
 import 'package:flutter/material.dart';
 
-class ViewFilmsList extends StatelessWidget {
+class ViewFoodsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FilmsListView();
+    return FoodsListView();
   }
 }
 
-class FilmsListView extends StatefulWidget {
+class FoodsListView extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return FilmsListViewState();
+    return FoodsListViewState();
   }
 }
 
-class FilmsListViewState extends State<FilmsListView> {
+class FoodsListViewState extends State<FoodsListView> {
   final items = [
-    'Avengers: endgame',
-    'Bloodshot',
-    'Avengers: endgame',
-    'Bloodshot',
-    'Avengers: endgame',
-    'Bloodshot',
-    'Avengers: endgame',
-    'Bloodshot',
-    'Avengers: endgame'
+    'SĂN COMBO HÈ,GOM QUA "NO BỤNG"',
+    'MILO DAY 39K/VÉ- NẠP NĂNG LƯỢNG NHẬP HỘI SIÊU ANH HÙNG',
+    'MUA VÉ XEM PHIM GIÁ 50K BẰNG THẺ VISA SACOMBANK',
+    'MUA 2 VÉ GIÁ 85.000Đ VỚI THẺ TÍN DỤNG HSBC',
+    'ƯU ĐÃI TỪ GOLDSPORT',
+    'MUA 2 VÉ XEM PHIM 3D VỚI GIÁ 50 QUA ỨNG DỤNG MOMO',
+    'MUA THẺ XEM PHIM 79K TỪ VIETTEL PAY',
+    'MUA 2 VÉ XEM PHIM 2D TẠI CGV VỚI GIÁ 69K',
   ];
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        scrollDirection: Axis.horizontal,
+        scrollDirection: Axis.vertical,
         itemCount: items.length,
-        itemExtent: 300.0,
+        itemExtent: 250.0,
         itemBuilder: (context, position) {
           return Padding(
-            padding: const EdgeInsets.fromLTRB(10.0, 0, 0, 0),
+            padding: const EdgeInsets.fromLTRB(10.0, 0, 10.0, 0),
             child: Card(
               elevation: 10.0,
               shape: RoundedRectangleBorder(
@@ -53,9 +52,9 @@ class FilmsListViewState extends State<FilmsListView> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: NetworkImage(
-                              "https://genk.mediacdn.vn/thumb_w/640/2019/11/17/12-1573986740140507895242-crop-15739867493461517382242.jpg",
+                              "https://promotion.zalopay.vn/static/promotion/1x_cgvthang12.jpg",
                             ),
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fill,
 //                        colorFilter: ColorFilter.mode(
 //                          Colors.black26,
 //                          BlendMode.darken,
@@ -68,12 +67,8 @@ class FilmsListViewState extends State<FilmsListView> {
                     ListTile(
                       title: Text(items[position],
                           overflow: TextOverflow.ellipsis),
-                      subtitle: Text(
-                        'harryhaivn@gmail.com',
-                        overflow: TextOverflow.ellipsis,
-                      ),
                       trailing: Icon(
-                        Icons.bookmark,
+                        Icons.book,
                         color: Colors.green,
                       ),
                     ),
