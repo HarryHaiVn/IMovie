@@ -6,8 +6,8 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  bool isFastPaymentSwitched = false;
-  bool isVerifyFingerprintSwitched = false;
+  bool _isFastPaymentSwitched = false;
+  bool _isVerifyFingerSwitched = false;
   String _chosenTimeValue = "30 giây";
   String _chosenLanguageValue = "Tiếng Việt";
 
@@ -50,10 +50,10 @@ class _SettingsState extends State<Settings> {
                     ),
                     Spacer(),
                     Switch(
-                      value: isFastPaymentSwitched,
+                      value: _isFastPaymentSwitched,
                       onChanged: (value) {
                         setState(() {
-                          isFastPaymentSwitched = value;
+                          _isFastPaymentSwitched = value;
                           print(value);
                         });
                       },
@@ -152,10 +152,10 @@ class _SettingsState extends State<Settings> {
                             fontSize: 14.0)),
                     Spacer(),
                     Switch(
-                      value: isVerifyFingerprintSwitched,
+                      value: _isVerifyFingerSwitched,
                       onChanged: (value) {
                         setState(() {
-                          isVerifyFingerprintSwitched = value;
+                          _isVerifyFingerSwitched = value;
                           print(value);
                         });
                       },
