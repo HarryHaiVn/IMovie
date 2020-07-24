@@ -42,7 +42,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - ic_car_red.png
     - ic_car_green.png
     - ic_user.png
     - ic_lock.png
@@ -60,9 +59,6 @@ flutter:
     - ic_menu_percent.png
     - ic_menu_user.png
     - ic_pickup_hatchback.png
-    - ic_pickup_sedan.png
-    - ic_pickup_suv.png
-    - ic_pickup_van.png
     - ic_movie.png
     - ic_films.png
     - ic_caption_mavel.jpg
