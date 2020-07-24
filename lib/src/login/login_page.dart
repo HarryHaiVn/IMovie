@@ -24,7 +24,11 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 140,
               ),
-              Image.asset('ic_car_green.png'),
+              SizedBox(
+                height: 100.0,
+                width: 100.0,
+                child: Image.asset('ic_logo.jpg'),
+              ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 6),
                 child: Text(
@@ -37,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextStyle(fontSize: 16, color: Color(0xff606470)),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 145, 0, 20),
+                padding: const EdgeInsets.fromLTRB(0, 100, 0, 20),
                 child: TextField(
                   controller: _emailController,
                   style: TextStyle(fontSize: 18, color: Colors.black),
