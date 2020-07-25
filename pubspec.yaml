@@ -15,8 +15,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-#  firebase_auth:
-#  firebase_database:
+  #  firebase_auth:
+  #  firebase_database:
   #  google_maps_flutter: 0.4.0
   google_maps_flutter: ^0.5.28+1
 
@@ -58,7 +58,6 @@ flutter:
     - ic_menu_percent.png
     - ic_menu_user.png
     - ic_pickup_hatchback.png
-    - ic_movie.png
     - ic_films.png
     - ic_profile.png
     - ic_logo.jpg
