@@ -56,10 +56,6 @@ class FilmsListViewState extends State<FilmsListView> {
                               "https://genk.mediacdn.vn/thumb_w/640/2019/11/17/12-1573986740140507895242-crop-15739867493461517382242.jpg",
                             ),
                             fit: BoxFit.cover,
-//                        colorFilter: ColorFilter.mode(
-//                          Colors.black26,
-//                          BlendMode.darken,
-//                        ),
                           ),
 //                      color: Colors.grey,
                         ),
