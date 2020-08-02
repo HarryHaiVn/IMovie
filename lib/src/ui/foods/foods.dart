@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/src/home/list_foods.dart';
+import 'package:flutterapp/src/ui/foods/list_foods.dart';
 
 class Foods extends StatefulWidget {
   @override

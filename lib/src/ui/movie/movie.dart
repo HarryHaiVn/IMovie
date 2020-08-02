@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutterapp/src/home/list_films.dart';
-import 'package:flutterapp/src/home/list_films_coming_soon.dart';
-import 'package:flutterapp/src/home/list_films_special.dart';
+import 'package:flutterapp/src/ui/movie/list_films.dart';
+import 'package:flutterapp/src/ui/movie/list_films_coming_soon.dart';
+import 'package:flutterapp/src/ui/movie/list_films_special.dart';
 
 class Movie extends StatefulWidget {
   @override
@@ -168,7 +168,7 @@ class _MovieState extends State<Movie> {
                 Spacer(),
                 Container(
                   margin: EdgeInsets.fromLTRB(30.0, 0.0, 16.0, 0),
-                  padding: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 10.0),
+                  padding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
                   decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.all(
@@ -179,7 +179,7 @@ class _MovieState extends State<Movie> {
                             color: Colors.black,
                             offset: Offset(1, 3))
                       ] // make rounded corner of border
-                      ),
+                  ),
                   child: Text("Đặt Vé",
                       style: TextStyle(
                           fontSize: 14.0,

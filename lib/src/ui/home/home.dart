@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/src/home/foods.dart';
-import 'package:flutterapp/src/home/movie.dart';
-import 'package:flutterapp/src/home/profile.dart';
-import 'package:flutterapp/src/home/settings.dart';
+import 'package:flutterapp/src/ui/foods/foods.dart';
+import 'package:flutterapp/src/ui/movie/movie.dart';
+import 'package:flutterapp/src/ui/profile/profile.dart';
+import 'package:flutterapp/src/ui/settings/settings.dart';
 
 class Home extends StatefulWidget {
   @override
