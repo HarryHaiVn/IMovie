@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/data/movie_model.dart';
+import 'package:flutterapp/data/model/movie_model.dart';
 import 'package:flutterapp/src/blocs/movie_bloc.dart';
+import 'package:flutterapp/src/ui/common/widget.dart';
+import 'package:flutterapp/src/utils/Utils.dart';
+import 'package:flutterapp/src/utils/utils.dart';
 
 class ViewFilmsComingSoon extends StatelessWidget {
   @override
@@ -18,17 +21,6 @@ class FilmsComingSoonListView extends StatefulWidget {
 
 class FilmsComingSoonViewState extends State<FilmsComingSoonListView> {
   final MovieBloc _movieBloc = new MovieBloc();
-  final movieUpComingList = [
-    'Black Widow',
-    'The Eternals',
-    'Shang-Chi',
-    'Bloodshot',
-    'Thor: Love and Thunder',
-    'Bloodshot',
-    'Doctor Strange',
-    'Bloodshot',
-    'Avengers: endgame'
-  ];
 
   @override
   void initState() {
@@ -49,9 +41,17 @@ class FilmsComingSoonViewState extends State<FilmsComingSoonListView> {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<List<MovieNowPlay>>(
+    return StreamBuilder<List<MovieModel>>(
       stream: _movieBloc.movieUpComingList,
+      // ignore: missing_return
       builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return buildCircularProgressIndicatorWidget();
+        }
+        if (snapshot.hasError) {
+          Utils.showSnackBar(context, snapshot.error.toString());
+          return buildListViewNoDataWidget();
+        }
         if (snapshot.connectionState == ConnectionState.active) {
           var movieUpComingList = snapshot.data;
           return buildListViewWidget(movieUpComingList);
@@ -61,7 +61,7 @@ class FilmsComingSoonViewState extends State<FilmsComingSoonListView> {
   }
 }
 
-Widget buildListViewWidget(List<MovieNowPlay> movieUpComingList) {
+Widget buildListViewWidget(List<MovieModel> movieUpComingList) {
   return ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: movieUpComingList.length,
@@ -86,9 +86,10 @@ Widget buildListViewWidget(List<MovieNowPlay> movieUpComingList) {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: NetworkImage(
-                            movieUpComingList[position].posterPath,
+                            Utils.loadedPathImage(
+                                movieUpComingList[position].poster_path),
                           ),
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
 //                        colorFilter: ColorFilter.mode(
 //                          Colors.black26,
 //                          BlendMode.darken,

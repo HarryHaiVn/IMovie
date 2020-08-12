@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/src/blocs/auth_bloc.dart';
 import 'package:flutterapp/src/ui/dialog/loading_dialog.dart';
@@ -150,10 +149,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       style: TextStyle(color: Color(0xff606470), fontSize: 16),
                       children: <TextSpan>[
                         TextSpan(
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () {
-                                Navigator.pop(context);
-                              },
                             text: "Login now",
                             style: TextStyle(
                                 color: Color(0xff3277D8), fontSize: 16)),

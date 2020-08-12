@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutterapp/src/ui/movie/list_films.dart';
 import 'package:flutterapp/src/ui/movie/list_films_coming_soon.dart';
-import 'package:flutterapp/src/ui/movie/list_films_special.dart';
+import 'package:flutterapp/src/ui/movie/list_films_top_rate.dart';
 
 class Movie extends StatefulWidget {
   @override
@@ -26,7 +26,7 @@ class _MovieState extends State<Movie> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -268,7 +268,7 @@ class _MovieState extends State<Movie> {
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 10.0),
-              child: SizedBox(height: 200.0, child: ViewFilmsSpecialList()),
+              child: SizedBox(height: 200.0, child: ViewFilmsTopRateList()),
             ),
           ],
         ),

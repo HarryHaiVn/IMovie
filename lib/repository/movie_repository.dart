@@ -1,7 +1,9 @@
-
-import 'package:flutterapp/data/movie_model.dart';
+import 'package:flutterapp/data/model/movie_model.dart';
 
 abstract class MovieRepository {
-  Future<List<MovieNowPlay>> getListMoviePlayingNow();
-  Future<List<MovieNowPlay>> getListMovieUpComing();
+  Future<List<MovieModel>> getListMoviePlayingNow();
+
+  Future<List<MovieModel>> getListMovieUpComing();
+
+  Future<List<MovieModel>> getListMovieTopRate();
 }

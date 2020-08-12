@@ -1,0 +1,14 @@
+{
+  "login_text_title": "Welcome back!",
+  "login_text_sub_title": "Login to continue using iMovie",
+  "login_text_email_error": "Email cannot be blank",
+  "login_text_password_error": "Password cannot be blank",
+  "login_text_email_valid": "Please enter valid email",
+  "login_text_password_valid": "Password cannot < 8 char>",
+  "login_text_email": "Email",
+  "login_text_password": "Password",
+  "login_text_forgot": "Forgot password?",
+  "login_text_new_user": "New user?",
+  "login_text_login": "Log In",
+  "login_text_sign_up": "Sign up for a new account?"
+}

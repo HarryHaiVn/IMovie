@@ -1,0 +1,14 @@
+{
+  "login_text_title": "Xin Chào!",
+  "login_text_sub_title": "Đăng nhập để sử dụng iMovie",
+  "login_text_email_error": "Email không thể để trống",
+  "login_text_password_error": "Mật khẩu không thể để trống",
+  "login_text_email_valid": "Vui lòng nhập email hợp lệ",
+  "login_text_password_valid": "Mật khẩu không thể <8 char>",
+  "login_text_email": "Email",
+  "login_text_password": "Mật khẩu",
+  "login_text_forgot": "Quên mật khẩu?",
+  "login_text_new_user": "Tài khoản mới?",
+  "login_text_login": "Đăng Nhập",
+  "login_text_sign_up": "Đăng ký tài khoản mới?"
+}

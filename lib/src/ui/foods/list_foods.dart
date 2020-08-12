@@ -52,7 +52,7 @@ class FoodsListViewState extends State<FoodsListView> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: NetworkImage(
-                              "https://promotion.zalopay.vn/static/promotion/1x_cgvthang12.jpg",
+                              "https://blogvn.org/wp-content/uploads/2018/12/sot-ran-ran-chuong-trinh-xem-phim-hay-gia-ngat-ngay-cua-bhdstar.jpg",
                             ),
                             fit: BoxFit.fill,
 //                        colorFilter: ColorFilter.mode(

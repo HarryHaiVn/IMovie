@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/src/ui/home/home.dart';
 import 'package:flutterapp/src/ui/login/register_page.dart';
+import 'package:flutterapp/src/utils/appLocalizations.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -36,12 +37,12 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 6),
                 child: Text(
-                  "Welcome back!",
+                  AppLocalizations.of(context).translate('login_text_title'),
                   style: TextStyle(fontSize: 22, color: Color(0xff333333)),
                 ),
               ),
               Text(
-                "Login to continue using iMovie",
+                AppLocalizations.of(context).translate('login_text_sub_title'),
                 style: TextStyle(fontSize: 16, color: Color(0xff606470)),
               ),
               Form(
@@ -54,16 +55,19 @@ class _LoginPageState extends State<LoginPage> {
                         controller: _emailController,
                         validator: (value) {
                           if (value.isEmpty) {
-                            return 'Email cannot be blank';
+                            return AppLocalizations.of(context)
+                                .translate('login_text_email_error');
                           } else if (!emailRegex.hasMatch(value)) {
-                            return 'Please enter valid email';
+                            return AppLocalizations.of(context)
+                                .translate('login_text_email_valid');
                           } else {
                             return null;
                           }
                         },
                         style: TextStyle(fontSize: 18, color: Colors.black),
                         decoration: InputDecoration(
-                            labelText: "Email",
+                            labelText: AppLocalizations.of(context)
+                                .translate('login_text_email'),
                             prefixIcon: Container(
                                 width: 50, child: Image.asset("ic_mail.png")),
                             border: OutlineInputBorder(
@@ -77,9 +81,11 @@ class _LoginPageState extends State<LoginPage> {
                       controller: _passController,
                       validator: (value) {
                         if (value.isEmpty) {
-                          return 'Password cannot be blank';
+                          return AppLocalizations.of(context)
+                              .translate('login_text_password');
                         } else if (value.length < 8) {
-                          return 'Password cannot < 8 char>';
+                          return AppLocalizations.of(context)
+                              .translate('login_text_password_valid');
                         } else {
                           return null;
                         }
@@ -87,7 +93,8 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(fontSize: 18, color: Colors.black),
                       obscureText: true,
                       decoration: InputDecoration(
-                          labelText: "Password",
+                          labelText: AppLocalizations.of(context)
+                              .translate('login_text_password'),
                           prefixIcon: Container(
                               width: 50, child: Image.asset("ic_phone.png")),
                           border: OutlineInputBorder(
@@ -104,8 +111,8 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: AlignmentDirectional.centerEnd,
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                  child: Text(
-                    "Forgot password?",
+                  child: Text(AppLocalizations.of(context)
+                      .translate('login_text_forgot'),
                     style: TextStyle(fontSize: 16, color: Color(0xff606470)),
                   ),
                 ),
@@ -118,7 +125,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: RaisedButton(
                     onPressed: _onLoginClick,
                     child: Text(
-                      "Log In",
+                      AppLocalizations.of(context)
+                          .translate('login_text_login'),
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                     color: Color(0xff3277D8),
@@ -131,7 +139,8 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
                 child: RichText(
                   text: TextSpan(
-                      text: "New user? ",
+                      text: AppLocalizations.of(context)
+                          .translate('login_text_new_user'),
                       style: TextStyle(color: Color(0xff606470), fontSize: 16),
                       children: <TextSpan>[
                         TextSpan(
@@ -142,7 +151,8 @@ class _LoginPageState extends State<LoginPage> {
                                     MaterialPageRoute(
                                         builder: (context) => RegisterPage()));
                               },
-                            text: "Sign up for a new account",
+                            text: AppLocalizations.of(context)
+                                .translate('login_text_sign_up'),
                             style: TextStyle(
                                 color: Color(0xff3277D8), fontSize: 16))
                       ]),
@@ -156,12 +166,14 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _onLoginClick() {
-    final FormState form = _formKey.currentState;
-    if (form.validate()) {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => Home()));
-    } else {
-      print('Form is invalid');
-    }
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (context) => Home()));
+//    final FormState form = _formKey.currentState;
+//    if (form.validate()) {
+//      Navigator.of(context)
+//          .pushReplacement(MaterialPageRoute(builder: (context) => Home()));
+//    } else {
+//      print('Form is invalid');
+//    }
   }
 }
